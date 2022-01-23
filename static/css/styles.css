@@ -1,0 +1,36 @@
+body {
+    background-color:#CEE5D0;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 2rem;
+}
+.card {
+    margin: 5% 30%;
+}
+.Yesterday {
+background-color:#FF2442;
+}
+.Today {
+background-color:#5F7A61;
+}
+.Top {
+background-color:#FFBF86;
+}
+.Personal {
+background-color:#716F81;
+}
+.Notes {
+background-color:#035397;
+}
+.Schedule {
+background-color:#297F87;
+}
+
+.main-topic {
+font-family: 'PT Serif', serif;
+}
+.loginarea{
+padding: 1%;
+}
+.log {
+margin-left: auto;
+}

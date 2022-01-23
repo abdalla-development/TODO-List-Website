@@ -1,0 +1,219 @@
+{% extends 'bootstrap/base.html' %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="/static/css/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200&family=Montserrat:wght@300;400&family=PT+Serif&display=swap" rel="stylesheet">
+{% endblock %}
+{% block title %}TODO LIST{% endblock %}
+{% block content %}
+<!-- Navbar as heading -->
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1 main-topic">TODO List</span>
+  </div>
+</nav>
+
+  <div class="d-md-flex h-md-100 align-items-center">
+    <form action="{{ url_for('todo') }}" method="post">
+    <!-- First Half -->
+    <div class="col-md-3 p-0 bg-indigo h-md-100">
+      <div class="card border" style="width: 18rem;">
+        <!-- log out -->
+        <a class="btn btn-warning btn-md" href="{{url_for('logout')}}" role="button">Log out</a>
+        <!-- Motivation -->
+        <div class="card-body text-center">
+          <p class="h3">
+            Reach for the Stars
+          </p>
+          <div class="form-group">
+            <p class="h3" id="date" name="date">{{items.date}}</p>
+            <p class="h3" id="day" name="day">{{items.day}}</p>
+          </div>
+        </div>
+        <!-- Yesterday Tasks -->
+        <div class="card-body">
+          <h5 class="card-title text-center h3 Yesterday main-topic">Yesterday Tasks</h5>
+          <div class="form-group">
+            <ul>
+              <li>
+                <textarea class="form-control" rows="1" id="before1" name="before1" placeholder="First">{{items.yesterday_1}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="before2" name="before2" placeholder="Second">{{items.yesterday_2}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="before3" name="before3" placeholder="Third">{{items.yesterday_3}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="before4" name="before4" placeholder="Forth">{{items.yesterday_4}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="before5" name="before5" placeholder="Fifth">{{items.yesterday_5}}</textarea>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Today Task-->
+        <div class="card-body">
+          <h5 class="card-title text-center h3 Today main-topic">Today Tasks</h5>
+          <div class="form-group">
+            <ol>
+              <li>
+                <textarea class="form-control" rows="1" id="today1" name="today1" placeholder="First Task">{{items.today_1}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="today2" name="today2" placeholder="Second Task">{{items.today_2}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="today3" name="today3" placeholder="Third Task">{{items.today_3}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="today4" name="today4" placeholder="Forth Task">{{items.today_4}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="today5" name="today5" placeholder="Fifth Task">{{items.today_5}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="today6" name="today6" placeholder="Sixth Task">{{items.today_6}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="today7" name="today7" placeholder="Seventh Task">{{items.today_7}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="today8" name="today8" placeholder="Eighth Task">{{items.today_8}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="today9" name="today9" placeholder="Ninth Task">{{items.today_9}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="today10" name="today10" placeholder="Tenth Task">{{items.today_10}}</textarea>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <!-- Top Task-->
+        <div class="card-body">
+          <h5 class="card-title text-center h3 Top main-topic">Top Tasks</h5>
+          <div class="form-group">
+            <ol>
+              <li>
+                <textarea class="form-control" rows="1" id="top1" name="top1" placeholder="Top Task 1">{{items.top_1}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="top2" name="top2" placeholder="Top Task 2">{{items.top_2}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="top3" name="top3" placeholder="Top Task 3">{{items.top_3}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="top4" name="top4" placeholder="Top Task 4">{{items.top_4}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="top5" name="top5" placeholder="Top Task 5">{{items.top_5}}</textarea>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <!-- Personal -->
+        <div class="card-body">
+          <h5 class="card-title text-center h3 Personal main-topic">Personal</h5>
+          <div class="form-group">
+            <ul>
+              <li>
+                <textarea class="form-control" rows="1" id="personal1" name="personal1" placeholder="Personal 1">{{items.personal_1}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="personal2" name="personal2" placeholder="Personal 2">{{items.personal_2}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="personal3" name="personal3" placeholder="Personal 3">{{items.personal_3}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="personal4" name="personal4" placeholder="Personal 4">{{items.personal_4}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="1" id="personal5" name="personal5" placeholder="Personal 5">{{items.personal_5}}</textarea>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Notes -->
+        <div class="card-body">
+          <h5 class="card-title text-center h3 Notes main-topic">Notes</h5>
+          <div class="form-group">
+            <ol>
+              <li>
+                <textarea class="form-control" rows="2" id="note1" name="note1" placeholder="Note 1">{{items.notes_1}}</textarea>
+              <li>
+                <textarea class="form-control" rows="2" id="note2" name="note2" placeholder="Note 2">{{items.notes_2}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="2" id="note3" name="note3" placeholder="Note 3">{{items.notes_3}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="2" id="note4" name="note4" placeholder="Note 4">{{items.notes_4}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="2" id="note5" name="note5" placeholder="Note 5">{{items.notes_5}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="2" id="note6" name="note6" placeholder="Note 6">{{items.notes_6}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="2" id="note7" name="note7" placeholder="Note 7">{{items.notes_7}}</textarea>
+              </li>
+              <li>
+                <textarea class="form-control" rows="2" id="note8" name="note8" placeholder="Note 8">{{items.notes_8}}</textarea>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Half -->
+    <div class="col-md-9 p-0 bg-white h-md-100 loginarea">
+      <div class="card-body">
+        <h5 class="card-title text-center h3 Schedule main-topic">Schedule</h5>
+        <div class="form-group">
+          <label>06:00 AM</label>
+          <textarea class="form-control" rows="2" id="schedule1" name="schedule1">{{items.schedule_1}}</textarea><br>
+          <label>07:00 AM</label>
+          <textarea class="form-control" rows="2" id="schedule2" name="schedule2">{{items.schedule_2}}</textarea><br>
+          <label>08:00 AM</label>
+          <textarea class="form-control" rows="2" id="schedule3" name="schedule3">{{items.schedule_3}}</textarea><br>
+          <label>09:00 AM</label>
+          <textarea class="form-control" rows="2" id="schedule4" name="schedule4">{{items.schedule_4}}</textarea><br>
+          <label>10:00 AM</label>
+          <textarea class="form-control" rows="2" id="schedule5" name="schedule5">{{items.schedule_5}}</textarea><br>
+          <label>11:00 AM</label>
+          <textarea class="form-control" rows="2" id="schedule6" name="schedule6">{{items.schedule_6}}</textarea><br>
+          <label>12:00 PM</label>
+          <textarea class="form-control" rows="2" id="schedule7" name="schedule7">{{items.schedule_7}}</textarea><br>
+          <label>01:00 PM</label>
+          <textarea class="form-control" rows="2" id="schedule8" name="schedule8">{{items.schedule_8}}</textarea><br>
+          <label>02:00 PM</label>
+          <textarea class="form-control" rows="2" id="schedule9" name="schedule9">{{items.schedule_9}}</textarea><br>
+          <label>03:00 PM</label>
+          <textarea class="form-control" rows="2" id="schedule10" name="schedule10">{{items.schedule_10}}</textarea><br>
+          <label>04:00 PM</label>
+          <textarea class="form-control" rows="2" id="schedule11" name="schedule11">{{items.schedule_11}}</textarea><br>
+          <label>05:00 PM</label>
+          <textarea class="form-control" rows="2" id="schedule12" name="schedule12">{{items.schedule_12}}</textarea><br>
+          <label>06:00 PM</label>
+          <textarea class="form-control" rows="2" id="schedule13" name="schedule13">{{items.schedule_13}}</textarea><br>
+          <label>07:00 PM</label>
+          <textarea class="form-control" rows="2" id="schedule14" name="schedule14">{{items.schedule_14}}</textarea><br>
+          <label>08:00 PM</label>
+          <textarea class="form-control" rows="2" id="schedule15" name="schedule15">{{items.schedule_15}}</textarea><br>
+          <label>09:00 PM</label>
+          <textarea class="form-control" rows="2" id="schedule16" name="schedule16">{{items.schedule_16}}</textarea><br>
+          <label>10:00 PM</label>
+          <textarea class="form-control" rows="2" id="schedule17" name="schedule17">{{items.schedule_17}}</textarea><br>
+          <button type="submit" class="btn btn-primary btn-block btn-lg">Save</button>
+        </div>
+      </div>
+    </div>
+</form>
+  </div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'bootstrap/base.html' %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="/static/css/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200&family=Montserrat:wght@300;400&family=PT+Serif&display=swap" rel="stylesheet">
+{% endblock %}
+{% block title %}TODO LIST{% endblock %}
+{% block content %}
+<!-- Navbar as heading -->
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1 main-topic">TODO List</span>
+  </div>
+</nav>
+<div class="container-fluid text-center">
+  <div class="card text-center">
+    <div class="card-header text-center h2">
+      Register Now
+    </div>
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <form action="{{ url_for('register') }}" method="post">
+          <p class="main-topic">Please provide the information below to register</p>
+          <input type="text" class="form-control" id="f-name" name="f-name" placeholder="First Name" required="required"><br>
+          <input type="text" class="form-control" id="l-name" name="l-name" placeholder="Last Name" required="required"><br>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="required"><br>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Password" required="required"><br>
+          <button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
+          </form>
+        </blockquote>
+    </div>
+  </div>
+</div>
+{% endblock %}

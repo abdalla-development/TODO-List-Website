@@ -1,0 +1,59 @@
+{% extends 'bootstrap/base.html' %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="/static/css/styles.css" >
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200&family=Montserrat:wght@300;400&family=PT+Serif&display=swap" rel="stylesheet">
+{% endblock %}
+{% block title %}TODO LIST{% endblock %}
+{% block content %}
+<!-- Navbar as heading -->
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1 main-topic">TODO List</span>
+    </div>
+  </nav>
+  <div class="d-md-flex h-md-100 align-items-center">
+    <!-- First Half -->
+    <div class="col-md-5 p-0 bg-indigo h-md-100">
+      <div class="text-white d-md-flex align-items-center h-100 p-5 text-center ">
+        <div class="logoarea pt-5 pb-5">
+          <img class="img-thumbnail" src="https://printsbery.com/sites/default/files/styles/printsbery_product_image/public/photos/botanical-daily-planner-undated.jpeg" alt="">
+        </div>
+      </div>
+    </div>
+    <!-- Second Half -->
+    <div class="col-md-7 p-0 bg-white h-md-100 loginarea" style="background-color:#548CA8;">
+      <div class="d-md-flex align-items-center h-md-100 p-5 text-center">
+        <h1 class="main-topic">Welcome To Our TODO List Website</h1><br><br>
+      </div>
+      <p class="text-center">
+        Each one of us creates an atmosphere, a reality around us, but we can only reproduce on the outside that which is on the inside. Rome wasn't build on a day so you need planning
+        </p>
+      <p class="text-center">
+        Success is a ladder to claim, but you must be aware that you might fall, you might trimple and you will definitely face hecaps. But never forget you can only claim a ladder one step at the time. Plan your task and work hard to accomplish them, only when you reach the finish line you would only see what the great efforts you endured had paid off
+      </p>
+      <br><br>
+      <div class="row">
+        <!-- Sign in -->
+        <div class="col-md-6">
+          <div class="card text-center" style="width: 18rem;">
+            <div class="card-body">
+              <p class="card-text">Check out your goals for today</p>
+              <a href="{{url_for('login')}}" class="btn btn-primary center">Sign In</a>
+            </div>
+          </div>
+        </div>
+        <!-- Sign up -->
+        <div class="col-md-6">
+          <div class="card text-center" style="width: 18rem;">
+            <div class="card-body">
+              <p class="card-text">Don't have an account you can sign up now </p>
+              <a href="{{url_for('register')}}" class="btn btn-primary">Sign Up</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
